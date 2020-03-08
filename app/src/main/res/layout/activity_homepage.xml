@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/zodiac_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarHomepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/barwhite2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/goback"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="-15dp"
+                android:onClick="onClickBack"
+                android:id="@+id/backicon"/>
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="80dp"
+                android:layout_height="110dp"
+                android:layout_below="@id/backicon"
+                android:src="@drawable/layer9"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="20dp"
+                android:adjustViewBounds="true"
+                android:id="@+id/img_toolbar"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/img_toolbar"
+                android:layout_below="@id/backicon"
+                android:text="THE RESTAURANT"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:layout_alignTop="@id/img_toolbar"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/tv_name"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_alignStart="@id/tv_name"
+                android:layout_alignLeft="@id/tv_name"
+                android:id="@+id/tv_location"
+                android:textColor="@color/black"
+                android:text="Washington"/>
+
+            <RatingBar
+                android:isIndicator="true"
+                android:rating="3"
+                android:id="@+id/ratingicons"
+                style="@style/ImageRatingBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_below="@id/tv_location"
+                android:layout_marginTop="5dp"
+                android:layout_alignStart="@id/tv_location"
+                android:orientation="horizontal"
+                android:layout_alignLeft="@id/tv_location"
+                android:layout_marginLeft="2dp"
+                android:background="@null"
+                android:numStars="5"
+                android:stepSize="1">
+            </RatingBar>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ratingicons"
+                android:layout_below="@id/tv_location"
+                android:textColor="@color/white"
+                android:layout_alignBottom="@id/ratingicons"
+                android:text="(39) Reviews"
+                android:layout_marginHorizontal="5dp"
+                android:gravity="center_vertical"
+                android:textSize="15dp"
+                android:paddingBottom="12dp"
+                android:id="@+id/NoReviews"/>
+
+            <Button
+                android:layout_marginTop="5dp"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/NoReviews"
+                android:layout_alignStart="@id/ratingicons"
+                android:layout_marginRight="120dp"
+                android:layout_marginLeft="-5dp"
+                android:background="@drawable/btn_colored"
+                android:layout_alignLeft="@id/ratingicons"
+                android:layout_marginVertical="5dp"
+                android:text="Add Review"
+                android:textColor="@color/white"
+                android:scaleY="0.8"
+                android:id="@+id/btn_addreview"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/frameFeatured"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_below="@id/toolbarHomepage"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/rectangle13"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:id="@+id/tv_featured"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="Featured"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/kfcoriginalchickenrecipe500x366"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/img_data"
+            android:scaleType="fitCenter"
+            android:layout_marginHorizontal="10dp"
+            app:riv_border_width="2dip"
+            app:riv_border_color="@color/orange"
+            app:riv_corner_radius="8dp"
+            />
+
+        <TextView
+            android:layout_toLeftOf="@id/img_data"
+            android:id="@+id/tv_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/tv_featured"
+            android:text="carrot salad"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textColor="@color/orange" />
+    </RelativeLayout>
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:layout_below="@id/frameFeatured"
+        android:id="@+id/pagertabstrip"
+        android:layoutDirection="ltr"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:elevation="5dp"
+        android:paddingVertical="6dp"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/pagertabstrip"
+        android:layout_marginTop="-1dp"/>
+
+</RelativeLayout>

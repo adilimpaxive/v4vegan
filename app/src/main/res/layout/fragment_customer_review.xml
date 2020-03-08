@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jack Bolt"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/cname"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cname"
+        android:text="Interesting app easy to use and reliable"
+        android:textSize="11dp"
+        android:textColor="@color/black"
+        android:id="@+id/tv_review"/>
+
+    <RatingBar
+        android:isIndicator="true"
+        android:rating="0"
+        android:id="@+id/ratingicons"
+        style="@style/ImageRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_below="@id/tv_location"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="2dp"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:numStars="5"
+        android:stepSize="1" >
+
+    </RatingBar>
+</RelativeLayout>
